@@ -14,7 +14,7 @@ var space_command = " ";
 
 
 
-function setTerminal(){
+function TerminalSize(){
 	// ブラウザのウインドウサイズを取得
 	let innerWidth =  window.innerWidth;
 	let innerHeight = window.innerHeight;
@@ -29,10 +29,9 @@ window.addEventListener("load", function(){
 	// textareaのDOM取得
 	terminal = document.getElementById("terminal");
 
-	setTerminal();
-	// ターミナルの初期状態（textareaタグの文字列にプロンプトを表示）
+	TerminalSize();
+
 	terminal.value = Initial_command;
-	// ターミナル（textareaタグ）にフォーカス ==>カーソルが点滅する
 	terminal.focus();
 });
 
@@ -197,5 +196,12 @@ window.addEventListener("keyup", function(e){
 
 window.addEventListener("")
 
+
+const command_form = document.getElementById("command_form");
+const command = command_form.value
+
+if (command == "clear") {
+    alert('クリアが押されました');
+}
 
     

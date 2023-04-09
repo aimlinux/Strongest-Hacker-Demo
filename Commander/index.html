@@ -11,7 +11,8 @@
 <body>
 
     <textarea name="" id="terminal" cols="20" rows="5" spellcheck="false"></textarea>
-    <textarea name="" id="sub_terminal" cols="30" rows="10">
+    <textarea name="" id="sub_terminal" cols="30" rows="10"><br>
+        
 var user_name = prompt("UserNameを入力してください。");
 if (user_name == 0) {
     user_name = "NameLess"
@@ -126,9 +127,11 @@ if __name__ == '__main__':
         <p>コマンドラインに何か入力してエンターキーが押されたらいくつかの処理のうちの一つを実行します。</p>
         <p>このWebサイトはPCのブラウザでのみ対応しています。</p>
         <p>F11キーで全画面表示にしてご使用ください。</p><br>
-        <>command :  <input id="command_form" type="text">
+        <p>command :  <form method="post" name="info" id="form" action="">
+            <input id="command_form" value="clear" type="text" name="command_form">
+        </form></p>
         <p>上のテキストボックスに特定のコマンドを記入することで対応した処理が実行されます。</p>
-        
+        <p>エンターキーを押すことによって実行されます。</p>
 
     </div>
 </body>
