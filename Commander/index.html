@@ -63,8 +63,8 @@ switch (num) {
                 break;
     default:
                 terminal.value = value + Initial_command;
-		        console.log("[" + value + "]");
-		        terminal.focus();
+		console.log("[" + value + "]");
+		terminal.focus();
         }
 	}
 });
@@ -123,9 +123,12 @@ if __name__ == '__main__':
     </textarea>
     <div id="hints">
         <p>hints : </p>
-        <p>コマンドラインに何か入力してエンターキーが押されたら、いくつかの処理のうちの一つを実行します。</p>
+        <p>コマンドラインに何か入力してエンターキーが押されたらいくつかの処理のうちの一つを実行します。</p>
         <p>このWebサイトはPCのブラウザでのみ対応しています。</p>
-        <p>F11キーで全画面表示にしてご使用ください。</p>
+        <p>F11キーで全画面表示にしてご使用ください。</p><br>
+        <>command :  <input id="command_form" type="text">
+        <p>上のテキストボックスに特定のコマンドを記入することで対応した処理が実行されます。</p>
+        
 
     </div>
 </body>
