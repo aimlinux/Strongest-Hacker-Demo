@@ -11,6 +11,7 @@ body, p, form, ul, ol, input, button{
 html, body{
 	width: 100%;
 	height: 100%;
+    background-color: rgb(60, 201, 17);
 }
 
 /* ブラウザ側で勝手に追加する青い枠線を消す */
@@ -20,8 +21,9 @@ html, body{
 
 #terminal{
 	font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
-	width: 100%;
-	height: 80%;
+	width: 70%;
+	height: 79.9%;
+    float: none;
 	overflow: auto;	/* IEでは設定しておかないとスクロールバーが表示されしまう */
 	display: block;	/* 指定しないとスクロールバーが表示される */
 	border: none;	/* 変な余白が出ないように */
@@ -32,10 +34,21 @@ html, body{
 	line-height: 1.4em;	/* 全角文字を入力時にこれ以上の高さがないと入力時にぎくしゃくするため */
 }
 
-
-hr{
-    height: 2px;
-    background-color: rgb(60, 201, 17);
+#sub_terminal{
+    font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
+	width: 29.9%;
+	height: 80%;
+    top: -80%;
+    float: right;
+	overflow: auto;	/* IEでは設定しておかないとスクロールバーが表示されしまう */
+	display: block;	/* 指定しないとスクロールバーが表示される */
+	border: none;	/* 変な余白が出ないように */
+	resize: none;		/* リサイズできると格好悪いので */
+	background-color: black;
+	color: rgb(60, 201, 17);
+    position: relative;
+	font-size: 12pt;
+	line-height: 1.4em;	/* 全角文字を入力時にこれ以上の高さがないと入力時にぎくしゃくするため */
 }
 
 #hints{
@@ -47,4 +60,5 @@ hr{
     font-size: 12pt;
     line-height: 1.4em;
     font-weight: 100;
+    margin-top: 1px;
 }

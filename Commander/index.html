@@ -9,8 +9,118 @@
     <title>Commander</title>
 </head>
 <body>
+
     <textarea name="" id="terminal" cols="20" rows="5" spellcheck="false"></textarea>
-    <hr>
+    <textarea name="" id="sub_terminal" cols="30" rows="10">
+var user_name = prompt("UserNameを入力してください。");
+if (user_name == 0) {
+    user_name = "NameLess"
+}
+var terminal = null;				
+var screenWidth, screenHeight;	
+var Initial_command = user_name + "@Commander:/home/" + user_name + "$ ";
+var value = "";
+var first_command = " [sudo] password for " + user_name + " : ";
+var space_command = " ";
+function setTerminal(){
+	terminal.style.innerWidth  = innerWidth + "px";
+	terminal.style.innerHeight = innerHeight + "px";
+}
+window.addEventListener("load", function(){
+terminal = document.getElementById("terminal");
+terminal.focus();
+});
+window.addEventListener("resize", function(){
+	setTerminal();
+});
+let user_password = [];
+for (let i = 0; i < 10; i++) 
+    user_password.push(Math.floor(Math.random() * 10));
+window.addEventListener("keyup", function(e){
+	let key = e.keyCode;
+	if(key == 13){
+		value = terminal.value;
+		if(value.match(/\n$/) == null){	
+			return;		
+		}
+
+        let num = Math.floor(Math.random() * 10);
+switch (num) {
+    case 0:
+
+    (async () => {
+    const sleep = (second) => new Promise(resolve => setTimeout(resolve, second * 1000))
+            
+    await sleep(1)
+	terminal.value = value + first_command;
+                    console.log("[" + value + "]");
+                    await sleep(0.7)
+                    terminal.value = terminal.value + "\n" + Initial_command;
+                    console.log("[" + value + "]");
+                    terminal.focus();
+                })()
+            
+                break;
+    default:
+                terminal.value = value + Initial_command;
+		        console.log("[" + value + "]");
+		        terminal.focus();
+        }
+	}
+});
+window.addEventListener("")
+
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x86"
+        }
+    ],
+    "version": 4
+}
+
+
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+libfwupdplugin1 libxmlb1
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+
+def main():
+    """Run administrative tasks."""
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import Django. Are you sure it's installed and "
+            "available on your PYTHONPATH environment variable? Did you "
+            "forget to activate a virtual environment?"
+        ) from exc
+    execute_from_command_line(sys.argv)
+
+
+if __name__ == '__main__':
+    main()
+
+
+    </textarea>
     <div id="hints">
         <p>hints : </p>
         <p>コマンドラインに何か入力してエンターキーが押されたら、いくつかの処理のうちの一つを実行します。</p>
